@@ -1,0 +1,10 @@
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    transition: 0.5s;
+    background-color: #0c0c0c;
+    z-index: 1000;
+}
