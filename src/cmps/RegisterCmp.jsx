@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const RegisterCmp = ({ onLogin }) => {
+export const RegisterCmp = ({ onRegister }) => {
     const [userInput, setUserInput] = useState({
         username: "",
         password: "",
@@ -35,7 +35,7 @@ export const RegisterCmp = ({ onLogin }) => {
                 />
             </div>
 
-            <button onClick={() => onLogin(userInput)}>Login</button>
+            <button onClick={() => onRegister(userInput)}>Register</button>
         </div>
     )
 }

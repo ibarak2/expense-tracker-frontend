@@ -6,5 +6,30 @@
     width: 100%;
     transition: 0.5s;
     background-color: #0c0c0c;
+    color: #fff;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+
+    & nav {
+        margin: 0 auto;
+        max-width: 1300px;
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & h2 {
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    .user-wrapper {
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
 }
