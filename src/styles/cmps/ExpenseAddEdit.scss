@@ -1,0 +1,26 @@
+.expense-add-edit-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.7);
+
+    .expense-add-edit {
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        border-radius: 8px;
+        padding: 50px;
+
+        & h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+    }
+}

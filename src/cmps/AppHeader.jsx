@@ -26,7 +26,7 @@ export function AppHeader() {
         <header className='app-header'>
             <nav>
                 <h2 onClick={() => navigate(`${loggedInUser ? "/home" : "/"}`)}>
-                    Expense Track
+                    Expense Tracker
                 </h2>
                 <div className='user-wrapper'>
                     {loggedInUser && <h3>Welcome, {loggedInUser.username}</h3>}

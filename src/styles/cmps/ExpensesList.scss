@@ -1,0 +1,20 @@
+.expenses-list {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-collapse: collapse;
+
+    gap: 0;
+    & thead {
+        font-weight: bolder;
+        font-size: 20px;
+    }
+
+    & tr {
+    }
+
+    & td {
+        border: 1px solid #0c0c0c;
+        padding: 8px;
+    }
+}

@@ -5,6 +5,7 @@ export const utilService = {
     debounce,
     saveToStorage,
     loadFromStorage,
+    fullFormatDate,
 }
 
 function makeId(length = 6) {
@@ -78,6 +79,17 @@ function debounce(func, timeout = 300) {
     }
 }
 
+function fullFormatDate(timestamp) {
+    const date = new Date(timestamp)
+    const hour = date.getHours().toString().padStart(2, "0")
+    const minute = date.getMinutes().toString().padStart(2, "0")
+    const day = date.getDate().toString().padStart(2, "0")
+    const month = (date.getMonth() + 1).toString().padStart(2, "0")
+    const year = date.getFullYear().toString()
+    return `${day}.${month}.${year} - ${hour}:${minute}`
+}
+
+// local storage functions
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value))
 }
