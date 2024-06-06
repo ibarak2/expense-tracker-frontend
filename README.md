@@ -24,7 +24,7 @@ The Expense Tracker App helps individuals manage their personal finances. Users 
 
 1. Head back to your general project folder and clone the repository: `git clone https://github.com/ibarak2/expense-tracker-frontend.git`
 2. Navigate to the folder : `cd expense-tracker-frontend`
-3. Install project dependencies: `npm install`
+3. Install project dependencies: `npm i`
 4. Start the server: `npm run dev`
 5. Open `http://localhost:5173` in your browser and start.
 
