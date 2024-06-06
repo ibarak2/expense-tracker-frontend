@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Expense Tracker App helps individuals manage their personal finances. Users can track expenses, categorize spending, and visualize financial data to make better financial decisions.
+The Expense Tracker App helps individuals manage their personal finances. Users can track expenses, categorize spending, and visualize financial data to make better financial decisions. The app is also mobile responsive designed.
 
 ## Technologies
 
