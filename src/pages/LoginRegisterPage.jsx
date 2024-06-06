@@ -9,22 +9,24 @@ import { useUserStore } from "../store/user"
 export const LoginRegisterPage = () => {
     const navigate = useNavigate()
     const [isLogin, setIsLogin] = useState(true)
+    const [isDisabled, setIsDisabled] = useState(false)
+
     const loggedInUser = useUserStore((state) => state.loggedInUser)
     const { loginAction, registerAction } = useUserStore((state) => state)
-
     useEffect(() => {
         if (loggedInUser) navigate("/home")
     }, [])
 
     const onLogin = async (userCreds) => {
         try {
+            setIsDisabled(true)
             const result = await loginAction(userCreds)
             if (result) {
                 navigate("/home")
             }
         } catch {
             toast("Couldn't login, please try again.", errorMsg)
-
+            setIsDisabled(false)
             setTimeout(() => {
                 window.location.assign("/")
             }, 800)
@@ -32,12 +34,14 @@ export const LoginRegisterPage = () => {
     }
     const onRegister = async (userCreds) => {
         try {
+            setIsDisabled(true)
             const result = await registerAction(userCreds)
             if (result) {
                 navigate("/home")
             }
         } catch {
             toast("Couldn't register, please try again.", errorMsg)
+            setIsDisabled(false)
             setIsLogin(true)
         }
     }
@@ -45,8 +49,18 @@ export const LoginRegisterPage = () => {
     return (
         <div className='login-register-page'>
             <div className='content'>
-                {isLogin && <LoginCmp onLogin={onLogin} />}
-                {!isLogin && <RegisterCmp onRegister={onRegister} />}
+                {isLogin && (
+                    <LoginCmp
+                        onLogin={onLogin}
+                        isDisabled={isDisabled}
+                    />
+                )}
+                {!isLogin && (
+                    <RegisterCmp
+                        onRegister={onRegister}
+                        isDisabled={isDisabled}
+                    />
+                )}
                 {isLogin && (
                     <p>
                         New in here?{" "}

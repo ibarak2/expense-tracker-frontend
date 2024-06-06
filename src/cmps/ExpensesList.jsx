@@ -9,11 +9,11 @@ export const ExpensesList = ({
         <table className='expenses-list'>
             <thead>
                 <tr>
-                    <td>Date</td>
-                    <td>Title</td>
-                    <td>Price</td>
-                    <td>Category</td>
-                    <td>Actions</td>
+                    <td className='date-td'>Date</td>
+                    <td className='title-td'>Title</td>
+                    <td className='price-td'>Price</td>
+                    <td className='category-td'>Category</td>
+                    <td className='btns-td'>Actions</td>
                 </tr>
             </thead>
             <tbody>

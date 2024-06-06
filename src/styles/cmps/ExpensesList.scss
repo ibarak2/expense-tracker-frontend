@@ -1,20 +1,68 @@
 .expenses-list {
+    position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 20px;
-    border-collapse: collapse;
 
     gap: 0;
     & thead {
+        width: 80px !important;
         font-weight: bolder;
         font-size: 20px;
+        .btns-td {
+            min-width: 205px;
+        }
+    }
+
+    & tbody {
+        display: block;
+        width: 100%;
+        overflow-y: scroll;
+        height: 320px;
+        &::-webkit-scrollbar {
+            width: 5px;
+            position: absolute;
+        }
     }
 
     & tr {
+        display: table;
+        table-layout: fixed;
     }
 
     & td {
+        max-height: 60px;
+        height: 60px;
         border: 1px solid #0c0c0c;
         padding: 8px;
+        text-overflow: clip;
+        text-wrap: nowrap;
+    }
+
+    .date-td {
+        min-width: 160px;
+    }
+
+    .title-td {
+        width: 100%;
+    }
+
+    .price-td {
+        min-width: 120px;
+    }
+
+    .category-td {
+        min-width: 120px;
+    }
+
+    .btns-td {
+        min-width: 200px;
+    }
+
+    .expense-preview {
+        .action-btn {
+            margin: 5px;
+            width: 80px;
+            height: 30px;
+        }
     }
 }

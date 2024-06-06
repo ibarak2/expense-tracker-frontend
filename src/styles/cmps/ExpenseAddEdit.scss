@@ -12,8 +12,8 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
+        width: 400px;
+        height: 520px;
         border-radius: 8px;
         padding: 50px;
 
@@ -21,6 +21,37 @@
             text-align: center;
             font-size: 40px;
             margin-bottom: 40px;
+        }
+        .inputs-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            .input-wrapper {
+                display: flex;
+                flex-direction: column;
+                width: 250px;
+                gap: 5px;
+                & input {
+                    height: 36px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                & select {
+                    height: 36px;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+
+        .btns-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
         }
     }
 }

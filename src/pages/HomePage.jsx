@@ -86,18 +86,23 @@ export function HomePage() {
                     filterBy={filterBy}
                     onSetFilterBy={onSetFilterBy}
                 />
-                <button onClick={() => handleAddEditModal("open", "add")}>
+                <button
+                    className='add-btn'
+                    onClick={() => handleAddEditModal("open", "add")}
+                >
                     New Expense
                 </button>
                 {isLoading && <h2>Loading...</h2>}
                 {!isLoading && expenses.length === 0 && <h2>No Expenses</h2>}
-                {expenses && expenses.length > 0 && (
-                    <ExpensesList
-                        expenses={expenses}
-                        handleAddEditModal={handleAddEditModal}
-                        onRemoveExpense={onRemoveExpense}
-                    />
-                )}
+                <div className='list-wrapper'>
+                    {expenses && expenses.length > 0 && (
+                        <ExpensesList
+                            expenses={expenses}
+                            handleAddEditModal={handleAddEditModal}
+                            onRemoveExpense={onRemoveExpense}
+                        />
+                    )}
+                </div>
 
                 {isModalOpen && (
                     <ExpenseAddEdit

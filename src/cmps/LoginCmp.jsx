@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export const LoginCmp = ({ onLogin }) => {
+export const LoginCmp = ({ onLogin, isDisabled }) => {
     const [userInput, setUserInput] = useState({
         username: "",
         password: "",
@@ -35,7 +35,12 @@ export const LoginCmp = ({ onLogin }) => {
                 />
             </div>
 
-            <button onClick={() => onLogin(userInput)}>Login</button>
+            <button
+                disabled={isDisabled}
+                onClick={() => onLogin(userInput)}
+            >
+                Login
+            </button>
         </div>
     )
 }

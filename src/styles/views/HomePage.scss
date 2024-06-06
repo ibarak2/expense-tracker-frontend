@@ -7,5 +7,39 @@
         margin: 0 auto;
         padding: 100px 20px;
         height: 100%;
+
+        .list-wrapper {
+            // height: 362px;
+            // max-height: 400px;
+        }
+
+        .add-btn {
+            margin-bottom: 10px;
+            height: 36px;
+            width: 120px;
+            background-color: greenyellow;
+            color: #0c0c0c;
+            border: none;
+
+            &:hover {
+                background-color: darken($color: greenyellow, $amount: 20%);
+            }
+        }
+        .close-btn {
+            height: 36px;
+            width: 120px;
+        }
+
+        .delete-btn {
+            margin-bottom: 10px;
+            height: 36px;
+            width: 120px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            &:hover {
+                background-color: darken($color: red, $amount: 10%);
+            }
+        }
     }
 }
