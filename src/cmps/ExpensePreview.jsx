@@ -8,11 +8,21 @@ export const ExpensePreview = ({
     return (
         <tr className='expense-preview'>
             <td className='date-td'>
+                <span className='mobile-title'>Date: </span>
                 {utilService.fullFormatDate(expense.createdAt)}
             </td>
-            <td className='title-td'>{expense.title}</td>
-            <td className='price-td'>{expense.price}</td>
-            <td className='category-td'>{expense.category}</td>
+            <td className='title-td'>
+                <span className='mobile-title'>Title: </span>
+                <p>{expense.title}</p>
+            </td>
+            <td className='price-td'>
+                <span className='mobile-title'>Price: </span>
+                {expense.price}
+            </td>
+            <td className='category-td'>
+                <span className='mobile-title'> Category: </span>
+                {expense.category}
+            </td>
             <td className='btns-td'>
                 <button
                     className='action-btn edit-btn'

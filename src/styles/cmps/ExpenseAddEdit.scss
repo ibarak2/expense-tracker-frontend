@@ -12,10 +12,14 @@
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 400px;
-        height: 520px;
+        width: 90%;
+        height: 550px;
         border-radius: 8px;
         padding: 50px;
+
+        @media (min-width: 768px) {
+            width: 400px;
+        }
 
         & h2 {
             text-align: center;
@@ -52,6 +56,10 @@
             margin-top: 50px;
             display: flex;
             justify-content: space-between;
+            flex-direction: column;
+            @media (min-width: 768px) {
+                flex-direction: row;
+            }
         }
     }
 }
