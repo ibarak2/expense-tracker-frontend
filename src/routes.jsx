@@ -1,17 +1,17 @@
-import { Route } from "react-router-dom"
-import { HomePage } from "./pages/HomePage.jsx"
-import { LoginRegisterPage } from "./pages/LoginRegisterPage.jsx"
+import { Route } from 'react-router-dom'
+import { HomePage } from './pages/HomePage.jsx'
+import { LoginRegisterPage } from './pages/LoginRegisterPage.jsx'
 
 const routes = [
     {
-        path: "/",
+        path: '/',
         component: <LoginRegisterPage />,
-        label: "Login/Register",
+        label: 'Login/Register',
     },
     {
-        path: "/home",
+        path: '/home',
         component: <HomePage />,
-        label: "Home 🏠",
+        label: 'Home 🏠',
     },
 ]
 

@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 export const LoginCmp = ({ onLogin, isDisabled }) => {
     const [userInput, setUserInput] = useState({
-        username: "",
-        password: "",
+        username: '',
+        password: '',
     })
 
     const handeInputChange = (e) => {

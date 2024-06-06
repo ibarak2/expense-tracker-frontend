@@ -1,4 +1,4 @@
-import { ExpensePreview } from "./ExpensePreview"
+import { ExpensePreview } from './ExpensePreview'
 
 export const ExpensesList = ({
     expenses,

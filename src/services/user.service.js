@@ -1,6 +1,6 @@
-import { httpService } from "./http.service"
+import { httpService } from './http.service'
 
-const STORAGE_KEY_LOGGEDIN_USER = "loggedinUser"
+const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 
 export const userService = {
     login,
@@ -12,7 +12,7 @@ export const userService = {
 
 async function login(userCred) {
     try {
-        const user = await httpService.post("auth/login", userCred)
+        const user = await httpService.post('auth/login', userCred)
         if (user) {
             return saveLocalUser(user)
         }
@@ -21,13 +21,13 @@ async function login(userCred) {
     }
 }
 async function signup(userCred) {
-    const user = await httpService.post("auth/signup", userCred)
+    const user = await httpService.post('auth/signup', userCred)
     return saveLocalUser(user)
 }
 
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-    return await httpService.post("auth/logout")
+    return await httpService.post('auth/logout')
 }
 
 function saveLocalUser(user) {

@@ -1,8 +1,8 @@
-import React from "react"
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js"
-import { Pie } from "react-chartjs-2"
+import React from 'react'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Pie } from 'react-chartjs-2'
 
-import { utilService } from "../services/util.service"
+import { utilService } from '../services/util.service'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
@@ -25,7 +25,7 @@ export function PieChart({ expenses }) {
                 data: [...Object.values(categorysData)],
                 backgroundColor: utilService.chartColors(),
                 borderWidth: 3,
-                borderColor: "#fff",
+                borderColor: '#fff',
             },
         ],
     }
@@ -33,8 +33,8 @@ export function PieChart({ expenses }) {
     const options = {
         plugins: {
             responsive: true,
-            legend: "right",
-            tooltip: { callbacks: { label: () => "" } },
+            legend: 'right',
+            tooltip: { callbacks: { label: () => '' } },
         },
     }
 

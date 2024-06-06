@@ -1,13 +1,13 @@
-import { useEffect } from "react"
-import { useState } from "react"
-import { toast } from "react-toastify"
-import { errorMsg, fixMsg } from "../services/toastify-service"
-import { expenseService } from "../services/expense.service"
-import { useUserStore } from "../store/user"
-import { ExpensesList } from "../cmps/ExpensesList"
-import { ExpenseAddEdit } from "../cmps/ExpenseAddEdit"
-import { FilterBy } from "../cmps/FilterBy"
-import { PieChart } from "../cmps/PieChart"
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
+import { errorMsg, fixMsg } from '../services/toastify-service'
+import { expenseService } from '../services/expense.service'
+import { useUserStore } from '../store/user'
+import { ExpensesList } from '../cmps/ExpensesList'
+import { ExpenseAddEdit } from '../cmps/ExpenseAddEdit'
+import { FilterBy } from '../cmps/FilterBy'
+import { PieChart } from '../cmps/PieChart'
 
 export function HomePage() {
     const loggedInUser = useUserStore((state) => state.loggedInUser)
@@ -29,7 +29,7 @@ export function HomePage() {
             setExpenses(expensesRes)
             setIsLoading(false)
         } catch {
-            toast("An error occured, cannot load expenses.", errorMsg)
+            toast('An error occured, cannot load expenses.', errorMsg)
         }
     }
 
@@ -40,16 +40,16 @@ export function HomePage() {
                 !expenseToEdit.price ||
                 !expenseToEdit.category
             ) {
-                toast("Please fill all the fields.", fixMsg)
+                toast('Please fill all the fields.', fixMsg)
                 return
             }
             const res = await expenseService.save(expenseToEdit)
             if (res) {
-                handleAddEditModal("close")
+                handleAddEditModal('close')
                 loadExpenses()
             }
         } catch {
-            toast("An error occured, please try again.", errorMsg)
+            toast('An error occured, please try again.', errorMsg)
         }
     }
 
@@ -60,22 +60,22 @@ export function HomePage() {
                 loadExpenses()
             }
         } catch {
-            toast("An error occured, please try again.", errorMsg)
+            toast('An error occured, please try again.', errorMsg)
         }
     }
 
     const handleAddEditModal = (action, type, expense) => {
         // handle close modal
-        if (action === "close") {
+        if (action === 'close') {
             setIsModalOpen(false)
             return
         }
 
         // handle open modal
-        if (action === "open") {
-            if (type === "add") {
+        if (action === 'open') {
+            if (type === 'add') {
                 setExpense(null)
-            } else if (type === "edit") {
+            } else if (type === 'edit') {
                 setExpense(expense)
             }
             setIsModalOpen(true)
@@ -95,7 +95,7 @@ export function HomePage() {
                 />
                 <button
                     className='add-btn'
-                    onClick={() => handleAddEditModal("open", "add")}
+                    onClick={() => handleAddEditModal('open', 'add')}
                 >
                     New Expense
                 </button>

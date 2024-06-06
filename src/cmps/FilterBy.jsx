@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { expenseService } from "../services/expense.service"
+import { useEffect, useState } from 'react'
+import { expenseService } from '../services/expense.service'
 
 export const FilterBy = ({ filterBy, onSetFilterBy }) => {
     const [filterByToEdit, setFilterByToEdit] = useState(filterBy)
@@ -13,14 +13,14 @@ export const FilterBy = ({ filterBy, onSetFilterBy }) => {
         const field = e.target.name
         let value = e.target.value
         switch (e.target.type) {
-            case "number":
+            case 'number':
                 value = +value
                 break
 
             default:
                 break
         }
-        if (value === 0) value = ""
+        if (value === 0) value = ''
 
         setFilterByToEdit((prevState) => ({ ...prevState, [field]: value }))
     }

@@ -1,4 +1,4 @@
-import { utilService } from "../services/util.service"
+import { utilService } from '../services/util.service'
 
 export const ExpensePreview = ({
     expense,
@@ -16,7 +16,7 @@ export const ExpensePreview = ({
             <td className='btns-td'>
                 <button
                     className='action-btn edit-btn'
-                    onClick={() => handleAddEditModal("open", "edit", expense)}
+                    onClick={() => handleAddEditModal('open', 'edit', expense)}
                 >
                     Edit
                 </button>

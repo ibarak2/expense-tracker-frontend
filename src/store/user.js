@@ -1,6 +1,6 @@
-import { create } from "zustand"
-import { devtools } from "zustand/middleware"
-import { userService } from "../services/user.service"
+import { create } from 'zustand'
+import { devtools } from 'zustand/middleware'
+import { userService } from '../services/user.service'
 
 export const useUserStore = create()(
     devtools((set) => ({

@@ -1,32 +1,32 @@
 export const successMsg = {
-    position: "top-center",
+    position: 'top-center',
     autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     closeButton: false,
-    className: "successMsg",
+    className: 'successMsg',
 }
 
 export const errorMsg = {
-    position: "top-center",
+    position: 'top-center',
     autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     closeButton: false,
-    className: "errorMsg",
+    className: 'errorMsg',
 }
 
 export const fixMsg = {
-    position: "top-center",
+    position: 'top-center',
     autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true,
     closeButton: false,
-    className: "fixMsg",
+    className: 'fixMsg',
 }

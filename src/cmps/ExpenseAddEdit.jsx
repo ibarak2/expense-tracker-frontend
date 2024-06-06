@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { expenseService } from "../services/expense.service"
+import { useEffect, useState } from 'react'
+import { expenseService } from '../services/expense.service'
 
 export const ExpenseAddEdit = ({
     expense,
@@ -16,8 +16,8 @@ export const ExpenseAddEdit = ({
 
     const handleExpenseInputs = (e) => {
         let { name, value, type } = e.target
-        value = type === "number" ? +value : value
-        if (value === 0) value = ""
+        value = type === 'number' ? +value : value
+        if (value === 0) value = ''
         setExpenseToEdit((prevState) => ({ ...prevState, [name]: value }))
     }
 
@@ -25,7 +25,7 @@ export const ExpenseAddEdit = ({
         <div className='expense-add-edit-bg'>
             <div className='expense-add-edit'>
                 <h2>
-                    {expense && expense._id ? "Edit Expense" : "Add Expense"}
+                    {expense && expense._id ? 'Edit Expense' : 'Add Expense'}
                 </h2>
                 <div className='inputs-container'>
                     <div className='input-wrapper'>
@@ -71,11 +71,11 @@ export const ExpenseAddEdit = ({
                         className='add-btn'
                         onClick={() => onSaveExpense(expenseToEdit)}
                     >
-                        {expense && expense._id ? "Confirm" : "Add"}
+                        {expense && expense._id ? 'Confirm' : 'Add'}
                     </button>
                     <button
                         className='close-btn'
-                        onClick={() => handleAddEditModal("close")}
+                        onClick={() => handleAddEditModal('close')}
                     >
                         Close
                     </button>

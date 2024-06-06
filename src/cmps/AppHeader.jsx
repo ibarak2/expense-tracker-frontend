@@ -1,8 +1,8 @@
-import { toast } from "react-toastify"
-import { useUserStore } from "../store/user"
-import { errorMsg } from "../services/toastify-service"
-import { useNavigate } from "react-router"
-import { useEffect } from "react"
+import { toast } from 'react-toastify'
+import { useUserStore } from '../store/user'
+import { errorMsg } from '../services/toastify-service'
+import { useNavigate } from 'react-router'
+import { useEffect } from 'react'
 
 export function AppHeader() {
     const navigate = useNavigate()
@@ -10,22 +10,22 @@ export function AppHeader() {
     const logoutAction = useUserStore((state) => state.logoutAction)
 
     useEffect(() => {
-        if (!loggedInUser) navigate("/")
+        if (!loggedInUser) navigate('/')
     }, [])
 
     async function onLogout() {
         try {
             await logoutAction()
-            navigate("/")
+            navigate('/')
         } catch (err) {
-            toast("An error occured.", errorMsg)
+            toast('An error occured.', errorMsg)
         }
     }
 
     return (
         <header className='app-header'>
             <nav>
-                <h2 onClick={() => navigate(`${loggedInUser ? "/home" : "/"}`)}>
+                <h2 onClick={() => navigate(`${loggedInUser ? '/home' : '/'}`)}>
                     Expense Tracker
                 </h2>
                 <div className='user-wrapper'>

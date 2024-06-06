@@ -1,6 +1,6 @@
-import { httpService } from "./http.service.js"
+import { httpService } from './http.service.js'
 
-const BASE_URL = "expense/"
+const BASE_URL = 'expense/'
 
 export const expenseService = {
     query,
@@ -31,35 +31,35 @@ async function save(expense) {
 
 function getDefaultFilter() {
     return {
-        title: "",
-        minPrice: "",
-        category: "",
-        fromDate: "",
-        toDate: "",
+        title: '',
+        minPrice: '',
+        category: '',
+        fromDate: '',
+        toDate: '',
     }
 }
 
 function getEmptyExpenseToAdd() {
     return {
-        title: "",
-        price: "",
-        category: "",
+        title: '',
+        price: '',
+        category: '',
     }
 }
 
 function getExpensesCategory() {
     return [
-        "Food",
-        "Rent",
-        "Insurance",
-        "Shopping",
-        "Car",
-        "Entertainment",
-        "Healthcare",
-        "Taxes",
-        "Business",
-        "Travel",
-        "Savings",
-        "Other",
+        'Food',
+        'Rent',
+        'Insurance',
+        'Shopping',
+        'Car',
+        'Entertainment',
+        'Healthcare',
+        'Taxes',
+        'Business',
+        'Travel',
+        'Savings',
+        'Other',
     ]
 }

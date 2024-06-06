@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
-import { LoginCmp } from "../cmps/LoginCmp"
-import { RegisterCmp } from "../cmps/RegisterCmp"
-import { toast } from "react-toastify"
-import { useNavigate } from "react-router"
-import { errorMsg } from "../services/toastify-service"
-import { useUserStore } from "../store/user"
+import { useEffect, useState } from 'react'
+import { LoginCmp } from '../cmps/LoginCmp'
+import { RegisterCmp } from '../cmps/RegisterCmp'
+import { toast } from 'react-toastify'
+import { useNavigate } from 'react-router'
+import { errorMsg } from '../services/toastify-service'
+import { useUserStore } from '../store/user'
 
 export const LoginRegisterPage = () => {
     const navigate = useNavigate()
@@ -14,7 +14,7 @@ export const LoginRegisterPage = () => {
     const loggedInUser = useUserStore((state) => state.loggedInUser)
     const { loginAction, registerAction } = useUserStore((state) => state)
     useEffect(() => {
-        if (loggedInUser) navigate("/home")
+        if (loggedInUser) navigate('/home')
     }, [])
 
     const onLogin = async (userCreds) => {
@@ -22,13 +22,13 @@ export const LoginRegisterPage = () => {
             setIsDisabled(true)
             const result = await loginAction(userCreds)
             if (result) {
-                navigate("/home")
+                navigate('/home')
             }
         } catch {
             toast("Couldn't login, please try again.", errorMsg)
             setIsDisabled(false)
             setTimeout(() => {
-                window.location.assign("/")
+                window.location.assign('/')
             }, 800)
         }
     }
@@ -37,7 +37,7 @@ export const LoginRegisterPage = () => {
             setIsDisabled(true)
             const result = await registerAction(userCreds)
             if (result) {
-                navigate("/home")
+                navigate('/home')
             }
         } catch {
             toast("Couldn't register, please try again.", errorMsg)
@@ -63,7 +63,7 @@ export const LoginRegisterPage = () => {
                 )}
                 {isLogin && (
                     <p>
-                        New in here?{" "}
+                        New in here?{' '}
                         <span onClick={() => setIsLogin((prev) => !prev)}>
                             Register.
                         </span>
@@ -71,7 +71,7 @@ export const LoginRegisterPage = () => {
                 )}
                 {!isLogin && (
                     <p>
-                        Already have an account?{" "}
+                        Already have an account?{' '}
                         <span onClick={() => setIsLogin((prev) => !prev)}>
                             Login
                         </span>
