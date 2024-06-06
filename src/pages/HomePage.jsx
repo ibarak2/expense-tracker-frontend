@@ -1,12 +1,13 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { toast } from "react-toastify"
-import { errorMsg } from "../services/toastify-service"
+import { errorMsg, fixMsg } from "../services/toastify-service"
 import { expenseService } from "../services/expense.service"
 import { useUserStore } from "../store/user"
 import { ExpensesList } from "../cmps/ExpensesList"
 import { ExpenseAddEdit } from "../cmps/ExpenseAddEdit"
 import { FilterBy } from "../cmps/FilterBy"
+import { PieChart } from "../cmps/PieChart"
 
 export function HomePage() {
     const loggedInUser = useUserStore((state) => state.loggedInUser)
@@ -23,7 +24,6 @@ export function HomePage() {
 
     const loadExpenses = async () => {
         try {
-            console.log("Loading expenses")
             setIsLoading(true)
             const expensesRes = await expenseService.query(filterBy)
             setExpenses(expensesRes)
@@ -35,7 +35,14 @@ export function HomePage() {
 
     const onSaveExpense = async (expenseToEdit) => {
         try {
-            console.log("expenseToEdit", expenseToEdit)
+            if (
+                !expenseToEdit.title ||
+                !expenseToEdit.price ||
+                !expenseToEdit.category
+            ) {
+                toast("Please fill all the fields.", fixMsg)
+                return
+            }
             const res = await expenseService.save(expenseToEdit)
             if (res) {
                 handleAddEditModal("close")
@@ -94,15 +101,16 @@ export function HomePage() {
                 </button>
                 {isLoading && <h2>Loading...</h2>}
                 {!isLoading && expenses.length === 0 && <h2>No Expenses</h2>}
-                <div className='list-wrapper'>
-                    {expenses && expenses.length > 0 && (
+                {expenses && expenses.length > 0 && (
+                    <>
                         <ExpensesList
                             expenses={expenses}
                             handleAddEditModal={handleAddEditModal}
                             onRemoveExpense={onRemoveExpense}
                         />
-                    )}
-                </div>
+                        <PieChart expenses={expenses} />
+                    </>
+                )}
 
                 {isModalOpen && (
                     <ExpenseAddEdit
