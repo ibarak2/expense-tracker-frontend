@@ -11,13 +11,14 @@ The Expense Tracker App helps individuals manage their personal finances. Users 
 
 ### Installation
 
+- Create new folder for your project that will contain both of the backend and frontend code
+
 #### Backend-Server
 
-1. Create new folder for your project that will contain both of the backend and frontend code
-2. Open Terminal in that newly created folder and clone the repository: `git clone https://github.com/ibarak2/expense-tracker-backend.git`
-3. Navigate to the folder: `cd expense-tracker-backend`
-4. Install project dependencies: `npm i`
-5. Start the server: `npm start`
+1. Open Terminal in that newly created folder and clone the repository: `git clone https://github.com/ibarak2/expense-tracker-backend.git`
+2. Navigate to the folder: `cd expense-tracker-backend`
+3. Install project dependencies: `npm i`
+4. Start the server: `npm start`
 
 #### Frontend-Server
 
