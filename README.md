@@ -35,7 +35,7 @@ The Expense Tracker App helps individuals manage their personal finances. Users 
 -   **POST /expense:** Create new expense.
 -   **PUT /expense/:expenseId:** Update existing expense.
 -   **DELETE /expense/:expenseId:** Delete your expense.
-
+~
 -   **POST /auth/login:** User login route.
--   **PUT /auth/signup:** User register route.
--   **DELETE /auth/logout:** User logout route.
+-   **POST /auth/signup:** User register route.
+-   **POST /auth/logout:** User logout route.
